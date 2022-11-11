@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Burra Game</title>
+
+  <link rel="stylesheet" href="./css/style.css">
+
+  <script src="./js/main.js" defer></script>
+</head>
+
+<body>
+  <div class="Conrainer">
+
+    <div class="GameBoard__Wrapper" GameBoard__Wrapper>
+      <img src="./Images/Game__Board.png" alt="" class="Board__Image">
+
+      <div class="Side Left__Side">
+
+        <div class="First__Player Player__Info">
+          <div class="User__Image">
+            <img src="./Images/User.png" alt="">
+          </div>
+          <h1>Player 1</h1>
+
+          <h3>Score: <span>5</span> </h3>
+        </div>
+
+        <div class="Second__Player Player__Info">
+          <div class="User__Image">
+            <img src="./Images/User.png" alt="">
+          </div>
+          <h1>Player 2</h1>
+
+          <h3>Score: <span>3</span> </h3>
+        </div>
+
+      </div>
+
+      <div class="Side Right__Side">
+
+        <div class="All__Cards__Wrapper">
+
+          <div class="Card hidden"></div>
+
+          <div class="Card flip">
+            <div class="Card__Inner">
+              <div class="Card__Front">
+                <img src="./Images/Card _ A-1.png" alt="">
+              </div>
+              <div class="Card__Back">
+                <img src="./Images/Card _ Back.png" alt="">
+              </div>
+            </div>
+          </div>
+
+          <!-- <div class="Card pos-1">
+            <div class="Card__Inner">
+              <div class="Card__Front">
+                <img src="./Images/Card _ A-1.png" alt="">
+              </div>
+              <div class="Card__Back">
+                <img src="./Images/Card _ Back.png" alt="">
+              </div>
+            </div>
+          </div>
+
+          <div class="Card pos-2">
+            <div class="Card__Inner">
+              <div class="Card__Front">
+                <img src="./Images/Card _ A-1.png" alt="">
+              </div>
+              <div class="Card__Back">
+                <img src="./Images/Card _ Back.png" alt="">
+              </div>
+            </div>
+          </div> -->
+
+          <div class="Card rotate">
+            <div class="Card__Inner">
+              <div class="Card__Front">
+                <img src="./Images/Card _ A-1.png" alt="">
+              </div>
+              <div class="Card__Back">
+                <img src="./Images/Card _ Back.png" alt="">
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="Cards__Top__Wrapper Cards__Wrapper">
+
+        <div class="Action__Btn__Wrapper">
+          <button class="Btn__Withdrawal">Withdrawal</button>
+          <button class="Btn__Arrival">Arrival</button>
+          <button class="Btn__Dav">Dav</button>
+        </div>
+
+        <div class="Card__Positons Pos-1" Player__Card__Pos>
+
+          <div class="Card pos-1 active" Player__Card>
+            <div class="Card__Inner">
+              <div class="Card__Front">
+                <img src="./Images/Card _ A-1.png" alt="">
+              </div>
+              <div class="Card__Back">
+                <img src="./Images/Card _ Back.png" alt="">
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="Card__Positons Pos-2" Player__Card__Pos>
+
+          <div class="Card pos-2 active" Player__Card>
+            <div class="Card__Inner">
+              <div class="Card__Front">
+                <img src="./Images/Card _ A-2.png" alt="">
+              </div>
+              <div class="Card__Back">
+                <img src="./Images/Card _ Back.png" alt="">
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="Card__Positons Pos-3" Player__Card__Pos>
+
+          <div class="Card pos-3 active" Player__Card>
+            <div class="Card__Inner">
+              <div class="Card__Front">
+                <img src="./Images/Card _ A-3.png" alt="">
+              </div>
+              <div class="Card__Back">
+                <img src="./Images/Card _ Back.png" alt="">
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="Cards__Bottom__Wrapper Cards__Wrapper">
+        <div class="Card__Positons Pos-1"></div>
+        <div class="Card__Positons Pos-2"></div>
+        <div class="Card__Positons Pos-3"></div>
+
+        <div class="Action__Btn__Wrapper">
+          <button class="Btn__Withdrawal">Withdrawal</button>
+          <button class="Btn__Arrival">Arrival</button>
+          <button class="Btn__Dav">Dav</button>
+        </div>
+      </div>
+
+
+      <div class="Arrival__Wrapper">
+
+        <div class="Card__Positons Arrival__Pos-1" Card__Arrival__Positons></div>
+        <div class="Card__Positons Arrival__Pos-2" Card__Arrival__Positons></div>
+        <div class="Card__Positons Arrival__Pos-3" Card__Arrival__Positons></div>
+
+      </div>
+
+    </div>
+
+    <div class="Start__Btn__Container" Start__Btn__Container>
+      <button class="Btn__Start" Btn__Start></button>
+    </div>
+
+  </div>
+</body>
+
+</html>
