@@ -1,12 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Irish+Grover&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
 *,
 *::after,
 *::before {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  /* font-family: "Poppins", sans-serif; */
-  font-family: 'Irish Grover', cursive;
+  font-family: "Poppins", sans-serif;
+  /* font-family: 'Irish Grover', cursive; */
 }
 
 :root {
@@ -108,7 +109,7 @@ img {
   font-weight: 600;
   align-self: flex-end;
   pointer-events: none;
-  z-index: 1;
+  z-index: 31 !important;
 }
 
 .Conrainer .GameBoard__Wrapper.active .Side.Right__Side {
@@ -129,7 +130,7 @@ img {
   height: 100%;
 }
 
-.Conrainer .Side .First__Player {
+.Conrainer .Side .Second__Player {
   border-bottom: 0.2rem solid var(--Transparent-Black);
 }
 
@@ -163,9 +164,10 @@ img {
   width: var(--Card-Width);
   perspective: 1000px;
   cursor: pointer;
-  top: 0;
-  transition: 0.3s ease-in;
-  z-index: 2;
+  transition: 0.2s ease-in;
+  border: 0.2rem solid transparent;
+  border-radius: 0.3rem;
+  z-index: 2 !important;
 }
 
 .Conrainer .Card .Card__Inner {
@@ -200,14 +202,14 @@ img {
 .Conrainer .Card.rotate {
   transform: rotateZ(-10deg) translate(-40px, -10px);
   transform-origin: center;
-  z-index: 1;
+  z-index: -30 !important;
 }
 
 .Conrainer .Card.hidden {
   position: relative;
 }
 
-.Conrainer .Cards__Wrapper {
+.Conrainer .Player__MainCards__Wrapper {
   position: absolute;
   width: 100%;
   left: 50%;
@@ -215,32 +217,90 @@ img {
   max-width: 300px;
   height: fit-content;
   padding: 1rem;
-  /* display: flex;
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-around;
-  flex-wrap: wrap; */
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: auto auto;
-  place-items: center;
   gap: 0.5rem;
   transition: 0.6s ease-in;
 }
 
-.Conrainer .Cards__Top__Wrapper {
+.Conrainer .Player__Cards__Top__Wrapper {
   top: -340px;
 }
 
-.Conrainer .GameBoard__Wrapper.active .Cards__Top__Wrapper {
+.Conrainer .GameBoard__Wrapper.active .Player__Cards__Top__Wrapper {
   top: 0.5rem;
 }
 
-.Conrainer .Cards__Bottom__Wrapper {
+.Conrainer .Player__Cards__Bottom__Wrapper {
   bottom: -340px;
 }
 
-.Conrainer .GameBoard__Wrapper.active .Cards__Bottom__Wrapper {
+.Conrainer .GameBoard__Wrapper.active .Player__Cards__Bottom__Wrapper {
   bottom: 0.5rem;
+}
+
+.Conrainer .Player__MainCards__Wrapper .Player__Cards__Wrapper {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.Conrainer .Player__MainCards__Wrapper .Player__Cards__Wrapper .Cards__Wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: calc(var(--Card-Height) + 0.5rem);
+  width: calc(var(--Card-Width) + 0.5rem);
+  border: 0.15rem dashed var(--Transparent-white);
+  border-radius: 0.5rem;
+  background: var(--Transparent-Black);
+}
+
+.Conrainer .Player__MainCards__Wrapper .Player__Cards__Wrapper .Cards__Wrapper .Card {
+  position: relative;
+  top: 0 !important;
+  left: 0 !important;
+  z-index: 1 !important;
+}
+
+.Conrainer .Player__Cards__Bottom__Wrapper .Player__Cards__Wrapper.Cards__Show .Cards__Wrapper .Card,
+.Conrainer .Player__Cards__Top__Wrapper .Player__Cards__Wrapper.Cards__Show .Cards__Wrapper .Card,
+.Conrainer .Player__MainCards__Wrapper .Player__Cards__Wrapper.Cards__Show .Cards__Wrapper .Card.flip,
+.Conrainer .Player__MainCards__Wrapper .Player__Cards__Wrapper.Cards__Show .Cards__Wrapper .Card.flip .Card__Inner,
+.Conrainer .Player__MainCards__Wrapper .Player__Cards__Wrapper.Cards__Show .Cards__Wrapper .Card .Card__Inner {
+  transform: rotateY(180deg);
+  pointer-events: none;
+}
+
+.Conrainer .GameBoard__Wrapper .Arrival__Container {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 300px;
+  height: auto;
+}
+
+.Conrainer .GameBoard__Wrapper .Arrival__Container .Arrival__Wrapper {
+  position: relative;
+  width: auto;
+  min-height: var(--Card-Height);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 0.5rem;
+}
+
+.Conrainer .GameBoard__Wrapper .Arrival__Container .Arrival__Wrapper .Card {
+  position: relative;
+  cursor: default;
 }
 
 .Conrainer .Cards__Wrapper .Card__Positons {
@@ -255,28 +315,25 @@ img {
   background: var(--Transparent-Black);
 }
 
-.Conrainer .Card.pos-1.active {
-  transform: translate(10px, 200px);
+.Conrainer .Player__Cards__Top__Wrapper .Card.selected {
+  transform: translateY(2px);
+  border-color: var(--Clr__Primary);
 }
 
-.Conrainer .Card.pos-2.active {
-  transform: translate(0px, 200px);
-}
-
-.Conrainer .Card.pos-3.active {
-  transform: translate(-10px, 200px);
-}
-
-.Conrainer .Cards__Top__Wrapper .Card.selected {
-  transform: translateY(10px);
+.Conrainer .Player__Cards__Bottom__Wrapper .Card.selected {
+  transform: translateY(-2px);
+  border-color: var(--Clr__Primary);
 }
 
 .Conrainer .Action__Btn__Wrapper {
-  grid-column: span 3;
-  width: 100%;
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: space-between;
+  width: 100%;
+}
+
+.Conrainer .Action__Btn__Wrapper.active {
+  display: flex;
 }
 
 .Conrainer .Action__Btn__Wrapper button {
@@ -301,37 +358,80 @@ img {
 }
 
 
-/* ============== */
+/*===================== */
 
-.Conrainer .Arrival__Wrapper {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  padding: 1rem;
-  transform: translate(-50%, -50%);
-  width: 100%;
-  max-width: 300px;
-  height: fit-content;
+.Conrainer .Dav__Alert__Container {
+  position: fixed;
   display: flex;
   align-items: center;
-  justify-content: space-around;
-  gap: 0.5rem;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--Transparent-Black);
+  opacity: 0;
+  pointer-events: none;
+  z-index: -1;
+  transition: 0.3s ease-in;
 }
 
-.Conrainer .Arrival__Wrapper .Card__Positons {
+.Conrainer .Dav__Alert__Container.active {
+  opacity: 1;
+  pointer-events: painted;
+  z-index: 6;
+}
+
+.Conrainer .Dav__Alert__Container .Dav__Alert__Wrapper {
+  z-index: 1;
+  width: 90%;
+  max-width: 350px;
+  border: 0.2rem solid var(--Transparent-white);
+  border-radius: 1rem;
+  background: url(../Images/Left__Side.png) center no-repeat;
+  background-size: cover;
+  box-shadow: 0rem 1rem 1rem var(--Transparent-Black);
+}
+
+.Conrainer .Dav__Alert__Container .Alert__Text {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.5rem;
+  color: var(--Black);
+}
+
+.Conrainer .Dav__Alert__Container .Dav__Alert__Wrapper .Alert__Action__Buttons {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 1rem;
+  gap: 1rem;
+}
+
+.Conrainer .Dav__Alert__Container .Dav__Alert__Wrapper .Alert__Action__Buttons button {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: calc(var(--Card-Height) + 0.5rem);
-  width: calc(var(--Card-Width) + 0.5rem);
-  /* border: 0.15rem dashed var(--Transparent-white);
+  padding: 0.5rem 1rem;
   border-radius: 0.5rem;
-  background: var(--Transparent-Black); */
+  font-size: 1rem;
+  font-weight: 500;
+  border: 0.15rem solid var(--Transparent-Black);
+  color: var(--Black);
+  background: var(--Clr__Primary);
+  transition: 0.3s ease-in;
+  cursor: pointer;
+}
+
+.Conrainer .Dav__Alert__Container .Dav__Alert__Wrapper .Alert__Action__Buttons .Btn__Rejection {
+  background: var(--Transparent-Black);
+  color: var(--White);
 }
 
 
-/*  ============ */
+/* ================== */
 
 .Conrainer .Start__Btn__Container {
   position: fixed;
@@ -371,4 +471,32 @@ img {
 
 .Conrainer .Start__Btn__Container .Btn__Start:active {
   scale: 0.98;
+}
+
+.Small__Screen__Alert {
+  position: fixed;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--Transparent-Black);
+  z-index: 5;
+  transition: 0.3s ease-in;
+}
+
+.Small__Screen__Alert h1 {
+  color: var(--White);
+  font-size: 2rem;
+}
+
+@media screen and (max-width: 1000px) {
+  .Conrainer {
+    display: none;
+  }
+  .Small__Screen__Alert {
+    display: flex;
+  }
 }

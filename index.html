@@ -20,15 +20,6 @@
 
       <div class="Side Left__Side">
 
-        <div class="First__Player Player__Info">
-          <div class="User__Image">
-            <img src="./Images/User.png" alt="">
-          </div>
-          <h1>Player 1</h1>
-
-          <h3>Score: <span>5</span> </h3>
-        </div>
-
         <div class="Second__Player Player__Info">
           <div class="User__Image">
             <img src="./Images/User.png" alt="">
@@ -38,59 +29,80 @@
           <h3>Score: <span>3</span> </h3>
         </div>
 
+        <div class="First__Player Player__Info">
+          <div class="User__Image">
+            <img src="./Images/User.png" alt="">
+          </div>
+          <h1>Player 1</h1>
+
+          <h3>Score: <span>5</span> </h3>
+        </div>
+
       </div>
 
       <div class="Side Right__Side">
-
         <div class="All__Card__Counter" All__Card__Counter></div>
-
         <div class="All__Cards__Wrapper" All__Cards__Wrapper></div>
-
       </div>
 
-      <div class="Cards__Top__Wrapper Cards__Wrapper ">
+      <div class="Player__Cards__Top__Wrapper Player__MainCards__Wrapper">
 
-        <div class="Action__Btn__Wrapper ">
-          <button class="Btn__GiveIt">Give it</button>
-          <button class="Btn__TakeIt">Take it</button>
-          <button class="Btn__Dav ">Dav</button>
+        <div class="Action__Btn__Wrapper" Second__Player__Action__Buttons>
+          <button class="Btn__GiveIt disabled" SP__Btn__GiveIt>Give it</button>
+          <button class="Btn__CutIt disabled" SP__Btn__CutIt>Cut it</button>
+          <button class="Btn__Dav disabled" SP__Btn__Dav>Dav</button>
         </div>
 
-        <div class="Card__Positons Pos-1 " Player1__Cards></div>
-
-        <div class="Card__Positons Pos-2 " Player1__Cards></div>
-
-        <div class="Card__Positons Pos-3 " Player1__Cards></div>
+        <div class="Player__Cards__Wrapper" Second__Player__Cards__Wrapper>
+          <div class="Cards__Wrapper" Cards__Wrapper></div>
+          <div class="Cards__Wrapper" Cards__Wrapper></div>
+          <div class="Cards__Wrapper" Cards__Wrapper></div>
+        </div>
 
       </div>
 
-      <div class="Cards__Bottom__Wrapper Cards__Wrapper ">
-        <div class="Card__Positons Pos-1 " Player2__Cards></div>
-        <div class="Card__Positons Pos-2 " Player2__Cards></div>
-        <div class="Card__Positons Pos-3 " Player2__Cards></div>
+      <div class="Player__Cards__Bottom__Wrapper Player__MainCards__Wrapper">
+        <div class="Player__Cards__Wrapper" First__Player__Cards__Wrapper>
+          <div class="Cards__Wrapper" Cards__Wrapper></div>
+          <div class="Cards__Wrapper" Cards__Wrapper></div>
+          <div class="Cards__Wrapper" Cards__Wrapper></div>
+        </div>
 
-        <div class="Action__Btn__Wrapper ">
-          <button class="Btn__GiveIt">Give it</button>
-          <button class="Btn__TakeIt">Take it</button>
-          <button class="Btn__Dav ">Dav</button>
+        <div class="Action__Btn__Wrapper" First__Player__Action__Buttons>
+          <button class="Btn__GiveIt disabled" FP__Btn__GiveIt>Give it</button>
+          <button class="Btn__CutIt disabled" FP__Btn__CutIt>Cut it</button>
+          <button class="Btn__Dav disabled" FP__Btn__Dav>Dav</button>
         </div>
       </div>
 
+      <div class="Arrival__Container">
+        <div class="Arrival__Wrapper Arrival__Top" SP__Arrival__Wrapper></div>
+        <div class="Arrival__Wrapper Arrival__Bottom" FP__Arrival__Wrapper></div>
+      </div>
 
-      <div class="Arrival__Wrapper ">
+      <div class="Start__Btn__Container " Start__Btn__Container>
+        <button class="Btn__Start " Btn__Start></button>
+      </div>
 
-        <div class="Card__Positons Arrival__Pos-1 " Card__Arrival__Positons></div>
-        <div class="Card__Positons Arrival__Pos-2 " Card__Arrival__Positons></div>
-        <div class="Card__Positons Arrival__Pos-3 " Card__Arrival__Positons></div>
+      <div class="Dav__Alert__Container" Dav__Alert__Container>
+
+        <div class="Dav__Alert__Wrapper">
+          <p class="Alert__Text">Lorem ipsum dolor sit amet.</p>
+
+          <div class="Alert__Action__Buttons">
+            <button class="Btn__Rejection" Btn__Rejection>Rejection</button>
+            <button class="Btn__Agree" Btn__Agree>Agree</button>
+          </div>
+        </div>
 
       </div>
 
     </div>
 
-    <div class="Start__Btn__Container " Start__Btn__Container>
-      <button class="Btn__Start " Btn__Start></button>
-    </div>
+  </div>
 
+  <div class="Small__Screen__Alert">
+    <h1>Oops! not availible on small Screen!</h1>
   </div>
 </body>
 
