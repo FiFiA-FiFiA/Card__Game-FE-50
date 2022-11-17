@@ -140,16 +140,64 @@ img {
 }
 
 .Conrainer .Side .Player__Info h1 {
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: var(--White);
 }
 
 .Conrainer .Side .Player__Info h3 {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   display: flex;
   align-items: center;
   gap: 0.5rem;
   color: var(--Shadow__Clr);
+}
+
+.Conrainer .Side .Player__Info .Player__TakenCard__Container {
+  position: absolute;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  right: -10px;
+  bottom: -30px;
+}
+
+.Conrainer .Side .Player__Info .Player__TakenCard__Container.active {
+  display: flex;
+}
+
+.Conrainer .Side .Player__Info .Player__TakenCard__Container .Player__TakenCards__Count {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 5rem;
+  background: var(--Clr__Primary);
+  color: var(--Black);
+  font-size: 1.1rem;
+  font-weight: 600;
+  top: -10px;
+  right: -10px;
+  z-index: 20;
+}
+
+.Conrainer .Side .Player__Info .Player__TakenCard__Container .Player__TakenCard__Wrapper {
+  position: relative;
+  width: calc(var(--Card-Width) - 20px);
+  height: calc(var(--Card-Height) - 30px);
+}
+
+.Conrainer .Side .Player__Info .Player__TakenCard__Container .Card {
+  width: calc(var(--Card-Width) - 20px);
+  height: calc(var(--Card-Height) - 30px);
+  top: 0;
+  left: 0;
+}
+
+.Conrainer .Side .Player__Info .Player__TakenCard__Container .Card .Card__Inner {
+  transform: rotateY(180deg);
 }
 
 .Conrainer .Side .All__Cards__Wrapper {
@@ -222,6 +270,7 @@ img {
   align-items: center;
   gap: 0.5rem;
   transition: 0.6s ease-in;
+  z-index: 2;
 }
 
 .Conrainer .Player__Cards__Top__Wrapper {
@@ -268,11 +317,16 @@ img {
 
 .Conrainer .Player__Cards__Bottom__Wrapper .Player__Cards__Wrapper.Cards__Show .Cards__Wrapper .Card,
 .Conrainer .Player__Cards__Top__Wrapper .Player__Cards__Wrapper.Cards__Show .Cards__Wrapper .Card,
-.Conrainer .Player__MainCards__Wrapper .Player__Cards__Wrapper.Cards__Show .Cards__Wrapper .Card.flip,
+.Conrainer .Player__Cards__Top__Wrapper .Player__Cards__Wrapper.Cards__Show .Cards__Wrapper .Card.flip,
+.Conrainer .Player__Cards__Bottom__Wrapper .Player__Cards__Wrapper.Cards__Show .Cards__Wrapper .Card.flip,
 .Conrainer .Player__MainCards__Wrapper .Player__Cards__Wrapper.Cards__Show .Cards__Wrapper .Card.flip .Card__Inner,
 .Conrainer .Player__MainCards__Wrapper .Player__Cards__Wrapper.Cards__Show .Cards__Wrapper .Card .Card__Inner {
   transform: rotateY(180deg);
   pointer-events: none;
+}
+
+.Conrainer .Player__MainCards__Wrapper .Player__Cards__Wrapper .Cards__Wrapper .Card.rotate {
+  transform: rotateZ(180deg) translate(0px, 0px);
 }
 
 .Conrainer .GameBoard__Wrapper .Arrival__Container {
@@ -303,6 +357,10 @@ img {
   cursor: default;
 }
 
+.Conrainer .GameBoard__Wrapper .Arrival__Container .Arrival__Wrapper .Card.rotate {
+  transform: rotateZ(180deg) translate(0px, 0px);
+}
+
 .Conrainer .Cards__Wrapper .Card__Positons {
   position: relative;
   display: flex;
@@ -330,6 +388,7 @@ img {
   align-items: center;
   justify-content: space-between;
   width: 100%;
+  gap: 1rem;
 }
 
 .Conrainer .Action__Btn__Wrapper.active {
@@ -341,6 +400,7 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex: 1;
   padding: 0.5rem 1rem;
   border-radius: 0.5rem;
   font-size: 1rem;
@@ -352,9 +412,17 @@ img {
   cursor: pointer;
 }
 
+.Conrainer .Action__Btn__Wrapper .Btn__FinishIt {
+  display: none;
+}
+
+.Conrainer .Action__Btn__Wrapper .Btn__FinishIt.active {
+  display: flex;
+}
+
 .Conrainer .Action__Btn__Wrapper button.disabled {
-  pointer-events: none;
-  opacity: 0.5;
+  /* pointer-events: none;
+  opacity: 0.5; */
 }
 
 
@@ -490,13 +558,15 @@ img {
 .Small__Screen__Alert h1 {
   color: var(--White);
   font-size: 2rem;
+  padding: 0 2rem;
 }
 
-@media screen and (max-width: 1000px) {
+
+/* @media screen and (max-width: 1000px) {
   .Conrainer {
     display: none;
   }
   .Small__Screen__Alert {
     display: flex;
   }
-}
+} */
