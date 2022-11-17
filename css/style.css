@@ -421,8 +421,8 @@ img {
 }
 
 .Conrainer .Action__Btn__Wrapper button.disabled {
-  /* pointer-events: none;
-  opacity: 0.5; */
+  pointer-events: none;
+  opacity: 0.5;
 }
 
 
@@ -561,12 +561,11 @@ img {
   padding: 0 2rem;
 }
 
-
-/* @media screen and (max-width: 1000px) {
+@media screen and (max-width: 1000px) {
   .Conrainer {
     display: none;
   }
   .Small__Screen__Alert {
     display: flex;
   }
-} */
+}
